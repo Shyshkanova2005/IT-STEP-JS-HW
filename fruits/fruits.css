@@ -1,0 +1,84 @@
+body {
+    background-color:antiquewhite;
+}
+.color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.colorButton {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    width: 90px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px; 
+}
+
+.color-buttons .pink { background-color: rgb(233, 81, 107); }
+.color-buttons .green { background-color: rgb(8, 198, 188); }
+.color-buttons .orange { background-color:rgb(255, 156, 86); }
+.color-buttons .yellow { background-color:  rgba(241, 179, 35, 0.74); color: black; }
+
+.styled-hr {
+    border: 0;
+    height: 2px;
+    background-color: #333; 
+    margin: 20px 0; 
+}
+.title {
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.fruit-list {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+.fruit-list li {
+    margin: 20px 155px;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #ccc;
+    width: 200px;
+    height: 40px;
+}
+.fruit-list .highlight {
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+}
+
+
+.green {
+    display:inline-block;
+    justify-content: space-around;
+    background-color: rgb(8, 198, 188);
+    width: 150px;
+    height: 40px;
+}
+.orange {
+    display:inline-block;
+    justify-content: space-around;
+    background-color: rgb(255, 156, 86);
+    width: 150px;
+    height: 40px;
+}
+.yellow {
+    display:inline-block;
+    justify-content: space-around;
+    background-color: rgba(241, 179, 35, 0.74);
+    width: 150px;
+    height: 40px;
+}
+.pink {
+    display:inline-block;
+    justify-content: space-around;
+    background-color: rgb(233, 81, 107);
+    width: 150px;
+    height: 40px;
+}
+
