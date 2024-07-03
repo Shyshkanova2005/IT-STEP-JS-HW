@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    background-color: #f5f5dc;  
+}
+
+#submit {
+    width: 220px;
+    height: 20px;
+}
+
+#type {
+    width: 172px;
+    height: 20px;
+}

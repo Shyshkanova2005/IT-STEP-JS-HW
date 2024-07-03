@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+    <style>
+        #square1 {
+            width: 60px;
+            height: 60px;
+            background-color: blue;
+            margin: 10px;
+        }
+        #square2 {
+            width: 60px;
+            height: 60px;
+            background-color: blueviolet;
+            margin: 10px;
+        }
+        #square3 {
+            width: 60px;
+            height: 60px;
+            background-color: yellow;
+            margin: 10px;
+        }
+        #square4 {
+            border: 1px solid navy;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<h3>Три квадрата разного цвета и один без цвета. при нажатии на цветной квадрат, 4й окрашивается в его цвет</h3>
+<body>
+    <div id="square1"></div>
+    <div id="square2"></div>
+    <div id="square3"></div>
+    <div id="square4"></div>
+    <script>
+       document.getElementById('square1').addEventListener('click', function() {
+        document.getElementById('square4').style.background = "green";
+       });
+       document.getElementById('square2').addEventListener('click', function() {
+        document.getElementById('square4').style.background = "black";
+       });
+       document.getElementById('square3').addEventListener('click', function() {
+        document.getElementById('square4').style.background = "red";
+       });
+           
+    </script>
+</body>
+</html>

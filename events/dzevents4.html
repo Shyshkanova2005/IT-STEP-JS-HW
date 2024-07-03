@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+ <style> 
+        #square1 {
+            width: 60px;
+            height: 60px;
+            background-color: blue;
+            margin: 10px;
+        }
+        #square2 {
+            width: 60px;
+            height: 60px;
+            background-color: blueviolet;
+            margin: 10px;
+        }
+        #square3 {
+            width: 60px;
+            height: 60px;
+            background-color: yellow;
+            margin: 10px;
+        }
+</style>
+</head>
+<h3>три квадрата при проведении мышкой цвет меняется</h3>
+<body>
+    <div id="square1"></div>
+    <div id="square2"></div>
+    <div id="square3"></div>
+    <script>
+    square1.onmouseenter = function(){
+        this.style.backgroundColor = 'green';
+      };
+    square2.onmouseenter = function(){
+        this.style.backgroundColor = 'red';
+      };
+    square3.onmouseenter = function(){
+        this.style.backgroundColor = 'pink';
+      };
+    </script>
+</body>
+</html>

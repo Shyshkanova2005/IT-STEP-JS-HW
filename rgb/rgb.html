@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Color Palette</title>
+<link rel="stylesheet" href="./rgb.css">
+<style>
+  body { font-family: Arial, sans-serif; }
+  .color-box { width: 100px; height: 50px; display: inline-block; margin: 5px; }
+  form { margin-bottom: 20px; }
+  input[type="number"] { width: 50px; }
+</style>
+</head>
+<body>
+<h2>Create new color:</h2>
+<form id="colorForm">
+    <label for="color">Color:</label>
+    <input type="text" id="color" required >
+    <br>
+    <label for="type">Type:</label>
+    <select id="type">
+        <option value="rgb" selected>RGB</option>
+        <option value="rgba">RGBA</option>
+        <option value="hex">HEX</option>
+    </select>
+    <br>
+    <label for="code">Code:</label>
+    <input type="text" id="code" name="code">
+    <br>
+    <button id="submit">Save</button>
+</form>
+
+<div id="colorPalette"></div>
+
+<script>
+const colors = [];
+
+document.getElementById('colorForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+  const color = document.getElementById('color').value.trim();
+  const type = document.getElementById('type').value;
+  const code = document.getElementById('code').value.trim();
+
+  if (validateColor(color, type, code)) {
+    addColor(color, type, code);
+  } else {
+    alert("Invalid color format!");
+  }
+});
+
+function validateColor(color, type, code) {
+  if (type === 'rgb') {
+    const rgbPattern = /^(\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})$/;
+    return rgbPattern.test(code);
+  } else if (type === 'rgba') {
+    const rgbaPattern = /^(\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3}),\s*(\d*(\.\d+)?)$/;
+    return rgbaPattern.test(code);
+  } else if (type === 'hex') {
+    const hexPattern = /^#([A-Fa-f0-9]{6})$/;
+    return hexPattern.test(code);
+  }
+  return false;
+}
+
+function addColor(name, type, code) {
+  const colorBox = document.createElement('div');
+  colorBox.className = 'color-box';
+  colorBox.style.backgroundColor = type === 'hex' ? code : `rgba(${code})`;
+  colorBox.title = `${name} (${type}: ${code})`;
+  colorBox.addEventListener('click', function() {
+    alert(`Selected Color: ${name} (${type}: ${code})`);
+  });
+  document.getElementById('colorPalette').appendChild(colorBox);
+  colors.push({ name, type, code });
+}
+
+function setCookie(name, value, days) {
+  const d = new Date();
+  d.setTime(d.getTime() + (days*24*60*60*1000));
+  let expires = "expires="+ d.toUTCString();
+  document.cookie = name + "=" + value + ";" + expires + ";path=/";
+}
+
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(';');
+  for(let i=0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') c = c.substring(1);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+function loadColors() {
+  colors.forEach(({ name, type, code }) => {
+    addColor(name, type, code);
+  });
+}
+
+window.onload = loadColors;
+</script>
+</body>
+</html>

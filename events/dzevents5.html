@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+    <style>
+         #square1 {
+            width: 60px;
+            height: 60px;
+            background-color: blue;
+            margin: 10px;
+        }
+        #square2 {
+            width: 60px;
+            height: 60px;
+            background-color: blueviolet;
+            margin: 10px;
+        }
+        #square3 {
+            width: 60px;
+            height: 60px;
+            background-color: yellow;
+            margin: 10px;
+        }
+        #square4 {
+            border: 1px solid navy;
+            width: 60px;
+            height: 60px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<h3>три квадрата для каждого 3 вида собвтий для каждого типа события выводится в квадрате текст и цвет</h3>
+<body>
+    <div id="square1" class="square"></div>
+    <div id="square2" class="square"></div>
+    <div id="square3" class="square"></div>
+    <div id="square4" class="square"></div> 
+    <script>
+          function setSquare4Content(text, color) {
+            var square4 = document.getElementById('square4');
+            square4.style.backgroundColor = color;
+            square4.textContent = text;
+        }
+
+        var squares = [
+            { id: 'square1', color: 'blue' },
+            { id: 'square2', color: 'blueviolet' },
+            { id: 'square3', color: 'yellow' }
+        ];
+
+        squares.forEach(function(square) {
+            var element = document.getElementById(square.id);
+
+            element.addEventListener('mouseover', function() {
+                setSquare4Content(`Mouseover on ${square.id}`, square.color);
+            });
+
+            element.addEventListener('click', function() {
+                setSquare4Content(`Click on ${square.id}`, square.color);
+            });
+
+            element.addEventListener('dblclick', function() {
+                setSquare4Content(`Double click on ${square.id}`, square.color);
+            });
+        });
+    </script>
+</body>
+</html>

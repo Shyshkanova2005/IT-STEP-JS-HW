@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style>
+        #square1 {
+            width: 60px;
+            height: 60px;
+            background-color: green;
+            margin: 10px;
+        }
+        #square2 {
+            width: 60px;
+            height: 60px;
+            background-color: blueviolet;
+            margin: 10px;
+        }
+        #square3 {
+            width: 60px;
+            height: 60px;
+            background-color: yellow;
+            margin: 10px;
+        }
+    </style>
+</head>
+<h3>три квадрата разного цвета при нажатии на каждый увет меняется на синий</h3>
+<body>
+    <div id="square1"></div>
+    <div id="square2"></div>
+    <div id="square3"></div>
+    <script>
+         document.getElementById('square1').addEventListener('click', function() {
+        document.getElementById('square1').style.background = "blue";
+       });
+       document.getElementById('square2').addEventListener('click', function() {
+        document.getElementById('square2').style.background = "blue";
+       });
+       document.getElementById('square3').addEventListener('click', function() {
+        document.getElementById('square3').style.background = "blue";
+       });
+    </script>
+</body>
+</html>

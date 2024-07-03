@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3t</title>
+    <style>
+          #square1 {
+            width: 60px;
+            height: 60px;
+            background-color: blueviolet;
+            margin: 10px;
+        }
+    </style>
+</head>
+<h3>один квадрат при нажатии меняется размер в два раза</h3>
+<body>
+    <div id="square1"></div>
+    <script>
+        const square1 = document.getElementById('square1');
+       square1.addEventListener('click', () => {
+            if (square1.style.width === '120px') {
+                square1.style.width = '120px';
+                square1.style.height = '120px';
+            } else {
+                square1.style.width = '120px';
+                square1.style.height = '120px';
+            }
+        });
+    </script>
+</body>
+</html>
